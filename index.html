@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.G. Sai Swarup | QA Tester Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Custom Professional Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f0f0f; }
+        ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 10px; }
+
+        body { background-color: #0f0f0f; overflow-x: hidden; color: white; scroll-behavior: smooth; }
+        
+        .glass-card {
+            background: rgba(24, 24, 27, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .glass-card:hover {
+            border-color: #22c55e;
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.3);
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .typing-cursor { border-right: 2px solid #22c55e; animation: blink 0.7s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <nav class="flex justify-between items-center px-6 md:px-16 py-6 sticky top-0 bg-[#0f0f0f]/90 backdrop-blur-md z-50 border-b border-zinc-800">
+        <div class="text-2xl font-bold italic text-green-500">Sai Swarup.</div>
+        <ul class="hidden md:flex space-x-8 text-xs font-medium uppercase tracking-widest">
+            <li><a href="#home" class="hover:text-green-500 transition">Home</a></li>
+            <li><a href="#about" class="hover:text-green-500 transition">About</a></li>
+            <li><a href="#education" class="hover:text-green-500 transition">Education</a></li>
+            <li><a href="#achievements" class="hover:text-green-500 transition">Achievements</a></li>
+            <li><a href="#contact" class="hover:text-green-500 transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-20">
+        <div class="max-w-2xl order-2 md:order-1">
+            <h1 class="text-5xl md:text-7xl font-black mb-4">M.G. Sai Swarup</h1>
+            <h2 class="text-2xl md:text-3xl text-gray-400 font-medium">I am a <span id="typing-text" class="text-green-500 typing-cursor"></span></h2>
+            <div class="flex space-x-6 mt-10">
+                <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="ri-github-line"></i></a>
+                <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="ri-linkedin-line"></i></a>
+                <a href="mailto:mattasaiswaroop5641@gmail.com" class="text-2xl hover:text-green-500 transition"><i class="ri-mail-line"></i></a>
+            </div>
+        </div>
+        <div class="order-1 md:order-2">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-green-500 p-2 shadow-[0_0_30px_rgba(34,197,94,0.2)] overflow-hidden">
+                <img src="profile.jpg.jpeg" alt="Sai Swarup" class="w-full h-full object-cover rounded-full">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 md:px-20 reveal">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">About Me</h3>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="glass-card p-8 rounded-2xl">
+                <h4 class="text-xl font-bold text-green-500 mb-6">Who I Am</h4>
+                <div class="space-y-4 text-gray-400 text-sm">
+                    <p><i class="ri-user-smile-line text-green-500 mr-2"></i> Aspiring QA & Automation Engineer</p>
+                    <p><i class="ri-map-pin-line text-green-500 mr-2"></i> Guntur, AP, India</p>
+                    <p><i class="ri-terminal-box-line text-green-500 mr-2"></i> Tech Enthusiast & Problem Solver</p>
+                </div>
+            </div>
+            <div class="md:col-span-2 space-y-6">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    I am currently a final-year <strong>BCA student</strong> at Vignan University. My journey is unique as I transitioned from a <strong>BiPC background</strong> in Intermediate to the world of Computer Applications, driven by a fascination for technology and logical problem-solving.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    I have cultivated a specialized focus in <strong>Software Quality Assurance</strong> and <strong>Automation</strong>. My technical expertise includes Python programming, OOPS, and DevOps integration. I am dedicated to identifying software vulnerabilities and ensuring high-performance, bug-free user experiences across banking and e-commerce platforms.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 px-6 md:px-20 bg-zinc-900/10 reveal">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Education</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl border-t-4 border-green-500">
+                <h4 class="text-xl font-bold">Vignan University</h4>
+                <p class="text-green-500 mb-2 font-medium">BCA (Final Year)</p>
+                <p class="text-gray-500 text-sm mb-4 italic">2023 — 2026 | Vadlamudi</p>
+                <p class="text-gray-400 text-sm">Focusing on Python, OOPS, and Software Testing fundamentals.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <h4 class="text-xl font-bold">NRI Junior College</h4>
+                <p class="text-green-500 mb-2 font-medium">Intermediate (BiPC)</p>
+                <p class="text-gray-500 text-sm mb-4 italic">2021 — 2023 | Guntur</p>
+                <p class="text-gray-400 text-sm">Successfully completed higher secondary education in the Science stream.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <h4 class="text-xl font-bold">Dr. KKRS Gowtham</h4>
+                <p class="text-green-500 mb-2 font-medium">SSC</p>
+                <p class="text-gray-500 text-sm mb-4 italic">Graduated 2021 | Guntur</p>
+                <p class="text-gray-400 text-sm">Foundational schooling with strong academic performance in Guntur.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="py-24 px-6 md:px-20 reveal">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Certifications & Achievements</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl">
+                <i class="ri-python-fill text-3xl text-blue-400 mb-4"></i>
+                <h4 class="font-bold">Python Essentials 2</h4>
+                <p class="text-gray-400 text-xs mt-2">Cisco Networking Academy (Nov 2025). Advanced Python proficiency[cite: 38, 40].</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <i class="ri-cloud-fill text-3xl text-orange-400 mb-4"></i>
+                <h4 class="font-bold">AWS Cloud Workshop</h4>
+                <p class="text-gray-400 text-xs mt-2">Merit Certificate: Secured 60% in assessment (Jan 2026).</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <i class="ri-code-box-line text-3xl text-green-400 mb-4"></i>
+                <h4 class="font-bold">DevOps & Cloud Integration</h4>
+                <p class="text-gray-400 text-xs mt-2">Workshop: "Modern Web Application Development" (Nov 2025).</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <i class="ri-bank-line text-3xl text-purple-400 mb-4"></i>
+                <h4 class="font-bold">Banking QA Simulation</h4>
+                <p class="text-gray-400 text-xs mt-2">Automated Regression Testing for Banking Application[cite: 2, 5].</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <i class="ri-shopping-cart-line text-3xl text-red-400 mb-4"></i>
+                <h4 class="font-bold">E-Commerce QA Simulation</h4>
+                <p class="text-gray-400 text-xs mt-2">E-Commerce Website Testing: Bug-Free Experience Project[cite: 16, 19].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 md:px-20 reveal">
+        <div class="max-w-3xl mx-auto glass-card p-10 rounded-3xl border border-zinc-800">
+            <h3 class="text-3xl font-bold mb-8 text-center">Get In Touch</h3>
+            <form action="https://formspree.io/f/mbdjbkbv" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Name" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition">
+                </div>
+                <textarea name="message" rows="5" placeholder="Message" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition"></textarea>
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-black py-4 rounded-xl transition">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-sm border-t border-zinc-900">
+        &copy; 2026 M.G. Sai Swarup. Built for Excellence.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textElement = document.getElementById("typing-text");
+            const words = ["QA Tester.", "Automation Enthusiast.", "Python Enthusiast.", "DevOps Learner."];
+            let wordIndex = 0; let charIndex = 0; let isDeleting = false;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                textElement.textContent = isDeleting ? currentWord.substring(0, charIndex - 1) : currentWord.substring(0, charIndex + 1);
+                charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+                let typeSpeed = isDeleting ? 50 : 100;
+
+                if (!isDeleting && charIndex === currentWord.length) { isDeleting = true; typeSpeed = 2000; }
+                else if (isDeleting && charIndex === 0) { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; typeSpeed = 500; }
+                setTimeout(type, typeSpeed);
+            }
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(section => revealObserver.observe(section));
+            type();
+        });
+    </script>
+</body>
+</html>

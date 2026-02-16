@@ -1,0 +1,56 @@
+/* Custom Professional Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f0f0f;
+}
+::-webkit-scrollbar-thumb {
+    background: #22c55e;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #16a34a;
+}
+
+body {
+    background-color: #0f0f0f;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* Glass Card with Hover Glow */
+.glass-card {
+    background: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+    border-color: #22c55e;
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.3);
+}
+
+/* Section reveal animation states */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.typing-cursor {
+    border-right: 2px solid #22c55e;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
