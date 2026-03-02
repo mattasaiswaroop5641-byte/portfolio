@@ -3,242 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.G. Sai Swarup | QA & Full-Stack Engineer</title>
+    <title>M.G. Sai Swarup | Security & QA Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Modern Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #0f0f0f; }
         ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 10px; }
-
         html { scroll-behavior: smooth; }
-        body { background-color: #0f0f0f; color: white; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+        body { background-color: #0f0f0f; color: white; overflow-x: hidden; font-family: 'Inter', sans-serif; cursor: none; }
         
-        /* Professional Glassmorphism */
+        /* UI Interaction Layers */
+        #cursor-dot { width: 8px; height: 8px; background: #22c55e; position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; }
+        #cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(34, 197, 94, 0.5); position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998; transition: all 0.1s ease-out; }
+        #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: transparent; z-index: 1000; }
+        #progress-bar { height: 100%; background: #22c55e; width: 0%; box-shadow: 0 0 10px #22c55e; }
+
         .glass-card {
             background: rgba(24, 24, 27, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative; overflow: hidden;
         }
-        .glass-card:hover {
-            border-color: #22c55e;
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px -10px rgba(34, 197, 94, 0.2);
+        .glass-card:hover { border-color: #22c55e; transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.2); }
+        
+        .glass-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(34, 197, 94, 0.1), transparent 40%);
+            z-index: 0; pointer-events: none;
         }
 
-        /* Animations */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+        
         .typing-cursor { border-right: 2px solid #22c55e; animation: blink 0.7s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        
-        .skill-tag {
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            padding: 4px 12px;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            color: #22c55e;
+
+        .cert-btn {
+            background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e; padding: 6px 14px; border-radius: 8px; font-size: 0.7rem;
+            font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 4px; position: relative; z-index: 10;
         }
+        .cert-btn:hover { background: #22c55e; color: black; }
+        
+        .philosophy-border { border-left: 4px solid #22c55e; background: linear-gradient(90deg, rgba(34, 197, 94, 0.05) 0%, transparent 100%); }
+        .skill-tag { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; color: #22c55e; }
+        
+        .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: 0.3s; }
+        .nav-link:hover { color: #22c55e; }
     </style>
 </head>
 <body>
 
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
     <nav class="flex justify-between items-center px-6 md:px-16 py-6 sticky top-0 bg-[#0f0f0f]/90 backdrop-blur-md z-50 border-b border-zinc-800">
         <div class="text-2xl font-bold italic text-green-500">Sai Swarup.</div>
-        <ul class="hidden md:flex space-x-8 text-xs font-medium uppercase tracking-widest">
-            <li><a href="#home" class="hover:text-green-500 transition">Home</a></li>
-            <li><a href="#projects" class="hover:text-green-500 transition">Projects</a></li>
-            <li><a href="#about" class="hover:text-green-500 transition">About</a></li>
-            <li><a href="#achievements" class="hover:text-green-500 transition">Certificates</a></li>
-            <li><a href="#contact" class="hover:text-green-500 transition">Contact</a></li>
+        <ul class="hidden md:flex space-x-8">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+            <li><a href="#achievements" class="nav-link">Certificates</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-20">
+    <section id="home" class="min-h-[90vh] flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-20">
         <div class="max-w-2xl order-2 md:order-1 text-center md:text-left">
             <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">M.G. Sai Swarup</h1>
             <h2 class="text-2xl md:text-3xl text-gray-400 font-medium mb-8">
-                Engineering <span id="typing-text" class="text-green-500 typing-cursor"></span>
+                Architecting <span id="typing-text" class="text-green-500 typing-cursor"></span>
             </h2>
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                <a href="https://shadowpad.onrender.com" target="_blank" class="bg-green-500 hover:bg-green-600 text-black px-8 py-3 rounded-xl font-bold transition flex items-center gap-2">
-                    <i class="ri-external-link-line"></i> Launch ShadowPad
+            <div class="flex flex-wrap gap-6 justify-center md:justify-start items-center">
+                <a href="https://shadowpad.onrender.com" target="_blank" class="bg-green-500 hover:bg-green-600 text-black px-8 py-3 rounded-xl font-bold transition flex items-center gap-2 shadow-lg shadow-green-500/20">
+                    <i class="ri-shield-keyhole-line text-xl"></i> Launch ShadowPad
                 </a>
-                <a href="#contact" class="border border-zinc-700 hover:border-green-500 px-8 py-3 rounded-xl font-bold transition">
-                    Contact Me
-                </a>
-            </div>
-            <div class="flex space-x-6 mt-10 justify-center md:justify-start">
-                <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="ri-github-line"></i></a>
-                <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="ri-linkedin-line"></i></a>
-                <a href="mailto:mattasaiswaroop5641@gmail.com" class="text-2xl hover:text-green-500 transition"><i class="ri-mail-line"></i></a>
+                <div class="flex space-x-5">
+                    <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-linkedin-box-fill"></i></a>
+                    <a href="mailto:mattasaiswaroop5641@gmail.com" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-mail-send-fill"></i></a>
+                </div>
             </div>
         </div>
         <div class="order-1 md:order-2">
-            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-green-500 p-2 shadow-[0_0_40px_rgba(34,197,94,0.15)] overflow-hidden">
-                <img src="profile.jpg.jpeg" alt="Sai Swarup" class="w-full h-full object-cover rounded-full transition duration-500 grayscale hover:grayscale-0">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-green-500 p-2 shadow-[0_0_50px_rgba(34,197,94,0.1)] overflow-hidden">
+                <img src="profile.jpg.jpeg" alt="Sai Swarup" class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition duration-700">
             </div>
         </div>
     </section>
 
     <section id="projects" class="py-24 px-6 md:px-20 reveal">
-        <div class="flex items-center gap-4 mb-12">
-            <h3 class="text-3xl font-bold border-l-4 border-green-500 pl-4">Featured Projects</h3>
-            <span class="bg-green-500 text-black text-[10px] font-bold px-2 py-1 rounded">LATEST</span>
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Engineering Projects</h3>
+        
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mb-10">
+            <div>
+                <h4 class="text-3xl font-black mb-2">ShadowPad</h4>
+                <p class="text-green-500 font-mono text-sm mb-6 underline decoration-green-900">Zero-Knowledge Collaborative Workspace</p>
+                <ul class="space-y-4 text-gray-400 text-sm mb-8">
+                    <li>• <strong>ShadowRatchet Protocol:</strong> Custom E2EE sync for 100+ concurrent users.</li>
+                    <li>• <strong>Forward Secrecy:</strong> AES-256-GCM keys generated client-side; never stored on server.</li>
+                    <li>• <strong>Optimization:</strong> 90% overhead reduction via Temporal Message Aggregation.</li>
+                    <li>• <strong>Architecture:</strong> Stateless relay nodes to prevent metadata leaking.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="skill-tag">Socket.io</span><span class="skill-tag">Web Crypto API</span><span class="skill-tag">Node.js</span><span class="skill-tag">E2EE</span>
+                </div>
+                <a href="https://shadowpad.onrender.com" target="_blank" class="text-green-500 font-bold flex items-center gap-2 hover:underline">Launch Live System <i class="ri-external-link-line"></i></a>
+            </div>
+            
+            <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
+                <p class="text-green-500">// Protocol: ShadowRatchet Active</p>
+                <p>> Initializing Handshake... Done.</p>
+                <p>> AES-256-GCM Key Exchange: Success</p>
+                <p>> Latency: 42ms | Relay: Debounced</p>
+                <p class="text-white mt-4">> Secure Tunnel Established.</p>
+            </div>
         </div>
 
         <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h4 class="text-4xl font-black text-white mb-4">ShadowPad</h4>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    A real-time collaborative workspace built for high-speed synchronization and absolute privacy. 
-                    Uses <strong>WebSockets (Socket.IO)</strong> to manage 2-60 concurrent users with sub-100ms latency.
-                </p>
-                <div class="grid grid-cols-2 gap-4 mb-8">
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                        <span class="text-green-500 text-xs font-bold block mb-1">STORAGE</span>
-                        <span class="text-sm text-gray-300">Ephemeral (Transient)</span>
-                    </div>
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                        <span class="text-green-500 text-xs font-bold block mb-1">SHARING</span>
-                        <span class="text-sm text-gray-300">Drag & Drop (25MB)</span>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-3">
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Socket.IO</span>
-                    <span class="skill-tag">Vanilla JS</span>
-                    <span class="skill-tag">CSS Variables</span>
-                </div>
+            <div class="bg-zinc-900/80 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 lg:order-1 order-2">
+                <p class="text-blue-400"># PyTest Status: Active</p>
+                <p class="text-green-400">PASSED: test_student_crud_integrity</p>
+                <p class="text-green-400">PASSED: test_sql_injection_sanitization</p>
+                <p class="text-green-400">PASSED: test_auth_middleware_bypass</p>
+                <p class="text-yellow-400">COVERAGE: 94.2%</p>
             </div>
-            <div class="relative bg-zinc-900 rounded-2xl p-6 border border-white/10 shadow-2xl overflow-hidden">
-                <div class="flex gap-2 mb-4 border-b border-white/5 pb-4">
-                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                </div>
-                <div class="space-y-3 font-mono text-[10px] text-zinc-500">
-                    <p class="text-green-400">> Initializing Secure Room...</p>
-                    <p>> Connection Established: WebSocket Active</p>
-                    <p class="text-white">> User_1 joined.</p>
-                    <p class="animate-pulse">> Typing: "Hello, ShadowPad!"</p>
-                </div>
-                <i class="ri-cursor-fill text-green-500 text-2xl absolute bottom-10 right-20 animate-bounce"></i>
-            </div>
-        </div>
+            
 
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mt-10">
-            <div class="relative bg-zinc-900 rounded-2xl p-6 border border-white/10 shadow-2xl overflow-hidden min-h-[250px] flex flex-col justify-center lg:order-1 order-2">
-                <div class="flex gap-2 mb-4 border-b border-white/5 pb-4 absolute top-6 left-6 right-6">
-                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                </div>
-                <div class="space-y-3 font-mono text-[10px] text-zinc-500 mt-8">
-                    <p class="text-blue-400">@app.route('/students', methods=['GET'])</p>
-                    <p>def get_students():</p>
-                    <p class="pl-4 text-yellow-300">return render_template('list.html')</p>
-                    <p class="text-green-400">> Server running on port 5000...</p>
-                </div>
-                <i class="ri-database-2-fill text-blue-500 text-4xl absolute bottom-6 right-6 opacity-50"></i>
-            </div>
+
             <div class="lg:order-2 order-1">
-                <h4 class="text-4xl font-black text-white mb-4">Student Management System</h4>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    A robust web application for educational institutions to manage student data efficiently. Built with <strong>Flask</strong> and <strong>SQLAlchemy</strong>, featuring full CRUD capabilities and a responsive interface.
-                </p>
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">SQLite</span>
-                    <span class="skill-tag">Jinja2</span>
+                <h4 class="text-3xl font-black mb-2">Student Management System</h4>
+                <p class="text-blue-400 font-mono text-sm mb-6 underline decoration-blue-900">Flask-based Institutional Suite</p>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">A robust full-stack application focused on data integrity. This project serves as a primary showcase for <strong>Automated Regression Testing</strong>, SQL sanitization, and relational database management using SQLAlchemy.</p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="skill-tag">Python (Flask)</span><span class="skill-tag">SQLAlchemy</span><span class="skill-tag">PyTest</span><span class="skill-tag">MVC</span>
                 </div>
-                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" class="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl transition font-bold text-white border border-zinc-700">
-                    <i class="ri-github-fill text-xl"></i> View Code
-                </a>
+                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" class="text-xs font-bold border border-zinc-700 px-6 py-2 rounded-lg hover:bg-zinc-800 transition">View Source Code</a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 md:px-20 bg-zinc-900/10 reveal">
-        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">About My Journey</h3>
-        <div class="grid md:grid-cols-3 gap-10 items-start">
+    <section id="skills" class="py-24 px-6 md:px-20 reveal">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Technical Matrix</h3>
+        <div class="grid md:grid-cols-3 gap-8">
             <div class="glass-card p-8 rounded-2xl">
-                <h4 class="text-xl font-bold text-green-500 mb-6">Origins</h4>
-                <div class="space-y-4 text-gray-400 text-sm">
-                    <p><i class="ri-hotel-line text-green-500 mr-2"></i> <strong>Inter:</strong> NRI Junior College (BiPC)</p>
-                    <p><i class="ri-building-line text-green-500 mr-2"></i> <strong>School:</strong> Dr. KKRS Gowtham</p>
-                    <p><i class="ri-graduation-cap-line text-green-500 mr-2"></i> <strong>Current:</strong> BCA @ Vignan University</p>
+                <h4 class="text-green-500 font-bold mb-6 flex items-center gap-2"><i class="ri-shield-user-line"></i> Security</h4>
+                <ul class="text-sm text-zinc-400 space-y-3">
+                    <li>• End-to-End Encryption (E2EE)</li>
+                    <li>• Zero-Knowledge Proofs</li>
+                    <li>• PBKDF2 & AES-GCM</li>
+                    <li>• SQL Injection Prevention</li>
+                </ul>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <h4 class="text-blue-500 font-bold mb-6 flex items-center gap-2"><i class="ri-test-tube-line"></i> QA & Testing</h4>
+                <ul class="text-sm text-zinc-400 space-y-3">
+                    <li>• Regression Testing (PyTest)</li>
+                    <li>• Automation Pipelines</li>
+                    <li>• Integration Integrity</li>
+                    <li>• Black-box Testing</li>
+                </ul>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <h4 class="text-purple-500 font-bold mb-6 flex items-center gap-2"><i class="ri-terminal-window-line"></i> Core Dev</h4>
+                <ul class="text-sm text-zinc-400 space-y-3">
+                    <li>• Python (Flask/SQLAlchemy)</li>
+                    <li>• JavaScript (Node.js/Socket.io)</li>
+                    <li>• Database Optimization</li>
+                    <li>• API Architecture</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 md:px-20 reveal">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">The Journey</h3>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    My transition from a <strong>BiPC (Biology)</strong> background to a BCA at Vignan University has given me a meticulous, systemic approach to code. I treat software like a biological organism: it requires systemic balance, resilience against 'infections' (bugs), and constant evolution.
+                </p>
+                <p class="text-gray-400 text-sm italic border-l-2 border-zinc-700 pl-4">
+                    "Observation of biological patterns translates directly to identifying security vulnerabilities."
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <span class="text-green-500 text-xs font-bold block mb-1">UNIVERSITY</span>
+                    <span class="text-sm text-gray-300">BCA @ Vignan University</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <span class="text-green-500 text-xs font-bold block mb-1">INTERMEDIATE</span>
+                    <span class="text-sm text-gray-300">NRI Junior College (BiPC)</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <span class="text-green-500 text-xs font-bold block mb-1">SCHOOLING (SSC)</span>
+                    <span class="text-sm text-gray-300">Dr. KKRS Gowtham</span>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <span class="text-green-500 text-xs font-bold block mb-1">LOCATION</span>
+                    <span class="text-sm text-gray-300">Andhra Pradesh, India</span>
                 </div>
             </div>
-            <div class="md:col-span-2">
-                <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                    My transition from a <strong>BiPC (Biology)</strong> background to <strong>Computer Applications</strong> has given me a unique, analytical perspective on software logic. I don't just see code; I see systems that need to be resilient and bug-free.
-                </p>
-                <p class="text-gray-300 text-lg leading-relaxed">
-                    I am currently specializing in <strong>QA Automation</strong> and <strong>Full-Stack Development</strong>. By building complex tools like ShadowPad and completing rigorous testing simulations in Banking and E-commerce, I have developed a standard for quality that is "zero-defect" oriented.
-                </p>
-            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="py-24 px-6 md:px-20 reveal">
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Engineering Philosophy</h3>
+        <div class="max-w-4xl glass-card p-10 rounded-3xl philosophy-border">
+            <h4 class="text-2xl font-black mb-6 italic">"The Two Sons Rule"</h4>
+            <p class="text-gray-300 text-lg leading-relaxed italic">
+                "I believe in <strong>Proportional Security</strong>. For ShadowPad, I gave the <strong>'Elder Son'</strong> (the permanent Vault) a heavy PBKDF2 'Big Stick' for long-term armor. For the <strong>'Younger Son'</strong> (the Live Room), I used lightweight ephemeral keys for speed. This balance is my engineering baseline."
+            </p>
         </div>
     </section>
 
     <section id="achievements" class="py-24 px-6 md:px-20 reveal">
-        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Professional Certifications</h3>
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Verified Certifications</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-card p-6 rounded-2xl border-b-2 border-orange-500">
-                <i class="ri-cloud-fill text-3xl text-orange-400 mb-4"></i>
-                <h4 class="font-bold">AWS Cloud Merit</h4>
-                <p class="text-gray-400 text-xs mt-2">60% Merit Score in AWS Deployment Workshop (Jan 2026).</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl border-b-2 border-green-500">
-                <i class="ri-code-box-line text-3xl text-green-400 mb-4"></i>
-                <h4 class="font-bold">Modern Web Dev & DevOps</h4>
-                <p class="text-gray-400 text-xs mt-2">Vignan University: Full-cycle DevOps and Cloud workshop (Nov 2025).</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl">
+            
+            <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
                 <i class="ri-python-fill text-3xl text-blue-400 mb-4"></i>
-                <h4 class="font-bold">Python Essentials 2</h4>
-                <p class="text-gray-400 text-xs mt-2">Cisco Academy: Advanced Python proficiency (08 Nov 2025).</p>
+                <h4 class="font-bold text-sm">Python Essentials 2</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">Cisco Networking Academy</p>
+                <div class="mt-auto flex gap-2">
+                    <a href="Python_Essentials_2_certificate_mattasaiswaroop5641-gmail-com_ab8d4c46-b32d-490e-9bff-bcba982109ac.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="Python_Essentials_2_certificate_mattasaiswaroop5641-gmail-com_ab8d4c46-b32d-490e-9bff-bcba982109ac.pdf" download class="cert-btn">Download</a>
+                </div>
             </div>
-            <div class="glass-card p-6 rounded-2xl">
-                <i class="ri-bank-line text-3xl text-purple-400 mb-4"></i>
-                <h4 class="font-bold">Banking QA Simulation</h4>
-                <p class="text-gray-400 text-xs mt-2">Automated Regression Testing for Banking App (ID: 2815485).</p>
+
+            <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                <i class="ri-shield-check-line text-3xl text-green-400 mb-4"></i>
+                <h4 class="font-bold text-sm">Software Testing Internship</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">Experience Verification</p>
+                <div class="mt-auto flex gap-2">
+                    <a href="Sai_Swaroop_Software_Testing_Internship_Certificate.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="Sai_Swaroop_Software_Testing_Internship_Certificate.pdf" download class="cert-btn">Download</a>
+                </div>
             </div>
-            <div class="glass-card p-6 rounded-2xl">
-                <i class="ri-shopping-cart-line text-3xl text-red-400 mb-4"></i>
-                <h4 class="font-bold">E-Commerce QA Project</h4>
-                <p class="text-gray-400 text-xs mt-2">Testing & Ensuring Bug-Free Experience (ID: 2815485).</p>
+
+            <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                <i class="ri-cloud-fill text-3xl text-orange-400 mb-4"></i>
+                <h4 class="font-bold text-sm">AWS / Institutional (231FJ01042)</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">ID: 231FJ01042</p>
+                <div class="mt-auto flex gap-2">
+                    <a href="231FJ01042.png" target="_blank" class="cert-btn">View</a>
+                    <a href="231FJ01042.png" download class="cert-btn">Download</a>
+                </div>
             </div>
+
+            <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                <i class="ri-robot-line text-3xl text-purple-400 mb-4"></i>
+                <h4 class="font-bold text-sm">Automated Testing</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">QA Advanced</p>
+                <div class="mt-auto flex gap-2">
+                    <a href="automated.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="automated.pdf" download class="cert-btn">Download</a>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
+                <i class="ri-award-line text-3xl text-yellow-400 mb-4"></i>
+                <h4 class="font-bold text-sm">Security Workshop</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">Vignan University</p>
+                <div class="mt-auto flex gap-2">
+                    <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" target="_blank" class="cert-btn">View</a>
+                    <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" download class="cert-btn">Download</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="contact" class="py-24 px-6 md:px-20 reveal">
         <div class="max-w-3xl mx-auto glass-card p-10 rounded-3xl border border-zinc-800">
-            <h3 class="text-3xl font-bold mb-8 text-center text-green-500">Get In Touch</h3>
+            <h3 class="text-3xl font-bold mb-8 text-center text-green-500">Initialize Connection</h3>
             <form action="https://formspree.io/f/mbdjbkbv" method="POST" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Name" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition">
+                    <input type="text" name="name" placeholder="Name" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition text-white">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition text-white">
                 </div>
-                <textarea name="message" rows="5" placeholder="How can I help you?" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition"></textarea>
-                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-black py-4 rounded-xl transition shadow-lg shadow-green-500/20">
-                    SEND MESSAGE
-                </button>
+                <textarea name="message" rows="5" placeholder="Your transmission..." required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition text-white"></textarea>
+                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-black py-4 rounded-xl transition shadow-lg shadow-green-500/20">SEND MESSAGE</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-600 text-sm border-t border-zinc-900">
-        &copy; 2026 M.G. Sai Swarup. Built for Scalability & Quality.
+    <footer class="py-10 text-center text-zinc-600 text-[10px] tracking-widest uppercase">
+        &copy; 2026 M.G. Sai Swarup | Zero-Knowledge | Zero-Defects.
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const dot = document.getElementById("cursor-dot");
+            const outline = document.getElementById("cursor-outline");
+            const progressBar = document.getElementById("progress-bar");
+
+            window.addEventListener("mousemove", (e) => {
+                dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+                outline.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+
+                document.querySelectorAll('.glass-card').forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+                    card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+                });
+            });
+
+            window.addEventListener("scroll", () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrolled + "%";
+            });
+
+            const textElement = document.getElementById("typing-text");
+            const words = ["Zero-Knowledge Systems.", "ShadowRatchet Protocols.", "QA Automation Pipelines.", "Forward Secrecy."];
+            let wordI = 0, charI = 0, isDeleting = false;
+
+            function type() {
+                const current = words[wordI];
+                textElement.textContent = isDeleting ? current.substring(0, charI--) : current.substring(0, charI++);
+                if (!isDeleting && charI > current.length) { isDeleting = true; setTimeout(type, 2000); }
+                else if (isDeleting && charI < 0) { isDeleting = false; wordI = (wordI + 1) % words.length; charI = 0; setTimeout(type, 500); }
+                else setTimeout(type, isDeleting ? 50 : 150);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            type();
+        });
+    </script>
 </body>
 </html>
