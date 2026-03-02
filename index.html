@@ -3,241 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M.G. Sai Swarup | QA & Full-Stack Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* Modern Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f0f0f; }
-        ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 10px; }
-
-        html { scroll-behavior: smooth; }
-        body { background-color: #0f0f0f; color: white; overflow-x: hidden; font-family: 'Inter', sans-serif; }
-        
-        /* Professional Glassmorphism */
-        .glass-card {
-            background: rgba(24, 24, 27, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .glass-card:hover {
-            border-color: #22c55e;
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px -10px rgba(34, 197, 94, 0.2);
-        }
-
-        /* Animations */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .typing-cursor { border-right: 2px solid #22c55e; animation: blink 0.7s infinite; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        
-        .skill-tag {
-            background: rgba(34, 197, 94, 0.1);
-            border: 1px solid rgba(34, 197, 94, 0.2);
-            padding: 4px 12px;
-            border-radius: 99px;
-            font-size: 0.75rem;
-            color: #22c55e;
-        }
-    </style>
+    <title>Portfolio | ShadowPad Developer</title>
+    <meta name="description" content="Professional portfolio of a Software Engineer specializing in Cryptography, Real-Time Systems, and Secure Collaborative Workspaces.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="hero">
+        <h1>I build <span id="typing-text" class="typing-cursor"></span></h1>
+    </header>
 
-    <nav class="flex justify-between items-center px-6 md:px-16 py-6 sticky top-0 bg-[#0f0f0f]/90 backdrop-blur-md z-50 border-b border-zinc-800">
-        <div class="text-2xl font-bold italic text-green-500">Sai Swarup.</div>
-        <ul class="hidden md:flex space-x-8 text-xs font-medium uppercase tracking-widest">
-            <li><a href="#home" class="hover:text-green-500 transition">Home</a></li>
-            <li><a href="#projects" class="hover:text-green-500 transition">Projects</a></li>
-            <li><a href="#about" class="hover:text-green-500 transition">About</a></li>
-            <li><a href="#achievements" class="hover:text-green-500 transition">Certificates</a></li>
-            <li><a href="#contact" class="hover:text-green-500 transition">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-20">
-        <div class="max-w-2xl order-2 md:order-1 text-center md:text-left">
-            <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">M.G. Sai Swarup</h1>
-            <h2 class="text-2xl md:text-3xl text-gray-400 font-medium mb-8">
-                Engineering <span id="typing-text" class="text-green-500 typing-cursor"></span>
-            </h2>
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                <a href="https://shadowpad.onrender.com" target="_blank" class="bg-green-500 hover:bg-green-600 text-black px-8 py-3 rounded-xl font-bold transition flex items-center gap-2">
-                    <i class="ri-external-link-line"></i> Launch ShadowPad
-                </a>
-                <a href="#contact" class="border border-zinc-700 hover:border-green-500 px-8 py-3 rounded-xl font-bold transition">
-                    Contact Me
-                </a>
-            </div>
-            <div class="flex space-x-6 mt-10 justify-center md:justify-start">
-                <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="ri-github-line"></i></a>
-                <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" class="text-2xl hover:text-green-500 transition"><i class="ri-linkedin-line"></i></a>
-                <a href="mailto:mattasaiswaroop5641@gmail.com" class="text-2xl hover:text-green-500 transition"><i class="ri-mail-line"></i></a>
-            </div>
-        </div>
-        <div class="order-1 md:order-2">
-            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-green-500 p-2 shadow-[0_0_40px_rgba(34,197,94,0.15)] overflow-hidden">
-                <img src="profile.jpg.jpeg" alt="Sai Swarup" class="w-full h-full object-cover rounded-full transition duration-500 grayscale hover:grayscale-0">
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-24 px-6 md:px-20 reveal">
-        <div class="flex items-center gap-4 mb-12">
-            <h3 class="text-3xl font-bold border-l-4 border-green-500 pl-4">Featured Projects</h3>
-            <span class="bg-green-500 text-black text-[10px] font-bold px-2 py-1 rounded">LATEST</span>
-        </div>
-
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <h4 class="text-4xl font-black text-white mb-4">ShadowPad</h4>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    A real-time collaborative workspace built for high-speed synchronization and absolute privacy. 
-                    Uses <strong>WebSockets (Socket.IO)</strong> to manage 2-60 concurrent users with sub-100ms latency.
-                </p>
-                <div class="grid grid-cols-2 gap-4 mb-8">
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                        <span class="text-green-500 text-xs font-bold block mb-1">STORAGE</span>
-                        <span class="text-sm text-gray-300">Ephemeral (Transient)</span>
-                    </div>
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                        <span class="text-green-500 text-xs font-bold block mb-1">SHARING</span>
-                        <span class="text-sm text-gray-300">Drag & Drop (25MB)</span>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap-3">
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">Socket.IO</span>
-                    <span class="skill-tag">Vanilla JS</span>
-                    <span class="skill-tag">CSS Variables</span>
-                </div>
-            </div>
-            <div class="relative bg-zinc-900 rounded-2xl p-6 border border-white/10 shadow-2xl overflow-hidden">
-                <div class="flex gap-2 mb-4 border-b border-white/5 pb-4">
-                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                </div>
-                <div class="space-y-3 font-mono text-[10px] text-zinc-500">
-                    <p class="text-green-400">> Initializing Secure Room...</p>
-                    <p>> Connection Established: WebSocket Active</p>
-                    <p class="text-white">> User_1 joined.</p>
-                    <p class="animate-pulse">> Typing: "Hello, ShadowPad!"</p>
-                </div>
-                <i class="ri-cursor-fill text-green-500 text-2xl absolute bottom-10 right-20 animate-bounce"></i>
-            </div>
-        </div>
-
-        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mt-10">
-            <div class="relative bg-zinc-900 rounded-2xl p-6 border border-white/10 shadow-2xl overflow-hidden min-h-[250px] flex flex-col justify-center lg:order-1 order-2">
-                <div class="flex gap-2 mb-4 border-b border-white/5 pb-4 absolute top-6 left-6 right-6">
-                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                </div>
-                <div class="space-y-3 font-mono text-[10px] text-zinc-500 mt-8">
-                    <p class="text-blue-400">@app.route('/students', methods=['GET'])</p>
-                    <p>def get_students():</p>
-                    <p class="pl-4 text-yellow-300">return render_template('list.html')</p>
-                    <p class="text-green-400">> Server running on port 5000...</p>
-                </div>
-                <i class="ri-database-2-fill text-blue-500 text-4xl absolute bottom-6 right-6 opacity-50"></i>
-            </div>
-            <div class="lg:order-2 order-1">
-                <h4 class="text-4xl font-black text-white mb-4">Student Management System</h4>
-                <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                    A robust web application for educational institutions to manage student data efficiently. Built with <strong>Flask</strong> and <strong>SQLAlchemy</strong>, featuring full CRUD capabilities and a responsive interface.
-                </p>
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Flask</span>
-                    <span class="skill-tag">SQLite</span>
-                    <span class="skill-tag">Jinja2</span>
-                </div>
-                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" class="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 px-6 py-3 rounded-xl transition font-bold text-white border border-zinc-700">
-                    <i class="ri-github-fill text-xl"></i> View Code
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 px-6 md:px-20 bg-zinc-900/10 reveal">
-        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">About My Journey</h3>
-        <div class="grid md:grid-cols-3 gap-10 items-start">
-            <div class="glass-card p-8 rounded-2xl">
-                <h4 class="text-xl font-bold text-green-500 mb-6">Origins</h4>
-                <div class="space-y-4 text-gray-400 text-sm">
-                    <p><i class="ri-hotel-line text-green-500 mr-2"></i> <strong>Inter:</strong> NRI Junior College (BiPC)</p>
-                    <p><i class="ri-building-line text-green-500 mr-2"></i> <strong>School:</strong> Dr. KKRS Gowtham</p>
-                    <p><i class="ri-graduation-cap-line text-green-500 mr-2"></i> <strong>Current:</strong> BCA @ Vignan University</p>
-                </div>
-            </div>
-            <div class="md:col-span-2">
-                <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                    My transition from a <strong>BiPC (Biology)</strong> background to <strong>Computer Applications</strong> has given me a unique, analytical perspective on software logic. I don't just see code; I see systems that need to be resilient and bug-free.
-                </p>
-                <p class="text-gray-300 text-lg leading-relaxed">
-                    I am currently specializing in <strong>QA Automation</strong> and <strong>Full-Stack Development</strong>. By building complex tools like ShadowPad and completing rigorous testing simulations in Banking and E-commerce, I have developed a standard for quality that is "zero-defect" oriented.
+    <main class="container">
+        <!-- About Section: The Two Sons Rule -->
+        <section class="reveal">
+            <div class="glass-card section-content">
+                <h2 class="accent-color">My Engineering Philosophy: The Two Sons Rule</h2>
+                <p class="philosophy-text">
+                    "In my development journey, I believe in Proportional Security. For ShadowPad, I gave the 'Elder Son' (the permanent Vault) a heavy PBKDF2 'Big Stick' for long-term armor. For the 'Younger Son' (the Live Room), I used lightweight ephemeral keys to keep the speed fast. This balance of Security vs. Usability is how I approach every system I build."
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="achievements" class="py-24 px-6 md:px-20 reveal">
-        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Professional Certifications</h3>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-card p-6 rounded-2xl border-b-2 border-orange-500">
-                <i class="ri-cloud-fill text-3xl text-orange-400 mb-4"></i>
-                <h4 class="font-bold">AWS Cloud Merit</h4>
-                <p class="text-gray-400 text-xs mt-2">60% Merit Score in AWS Deployment Workshop (Jan 2026).</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl border-b-2 border-green-500">
-                <i class="ri-code-box-line text-3xl text-green-400 mb-4"></i>
-                <h4 class="font-bold">Modern Web Dev & DevOps</h4>
-                <p class="text-gray-400 text-xs mt-2">Vignan University: Full-cycle DevOps and Cloud workshop (Nov 2025).</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl">
-                <i class="ri-python-fill text-3xl text-blue-400 mb-4"></i>
-                <h4 class="font-bold">Python Essentials 2</h4>
-                <p class="text-gray-400 text-xs mt-2">Cisco Academy: Advanced Python proficiency (08 Nov 2025).</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl">
-                <i class="ri-bank-line text-3xl text-purple-400 mb-4"></i>
-                <h4 class="font-bold">Banking QA Simulation</h4>
-                <p class="text-gray-400 text-xs mt-2">Automated Regression Testing for Banking App (ID: 2815485).</p>
-            </div>
-            <div class="glass-card p-6 rounded-2xl">
-                <i class="ri-shopping-cart-line text-3xl text-red-400 mb-4"></i>
-                <h4 class="font-bold">E-Commerce QA Project</h4>
-                <p class="text-gray-400 text-xs mt-2">Testing & Ensuring Bug-Free Experience (ID: 2815485).</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6 md:px-20 reveal">
-        <div class="max-w-3xl mx-auto glass-card p-10 rounded-3xl border border-zinc-800">
-            <h3 class="text-3xl font-bold mb-8 text-center text-green-500">Get In Touch</h3>
-            <form action="https://formspree.io/f/mbdjbkbv" method="POST" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Name" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition">
+        <!-- Featured Project: ShadowPad -->
+        <section class="reveal">
+            <div class="glass-card section-content">
+                <img src="shadowpad-preview.png" alt="ShadowPad Preview" class="project-image">
+                <h2 class="accent-color">ShadowPad: End-to-End Encrypted Collaborative Workspace</h2>
+                <div class="project-details">
+                    <p><strong>The Core:</strong> A zero-knowledge notepad that ensures total user privacy through a custom-built ShadowRatchet encryption protocol.</p>
+                    <p><strong>Technical Achievement:</strong> Engineered a high-concurrency environment using Socket.io, managing up to 100 synchronized users with a 250ms debounced relay system to optimize server performance on a $0 budget.</p>
+                    <p><strong>The Security:</strong> Implemented AES-256-GCM encryption where keys never leave the client’s browser, providing Forward Secrecy—meaning even a future server breach cannot decrypt past conversations.</p>
                 </div>
-                <textarea name="message" rows="5" placeholder="How can I help you?" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition"></textarea>
-                <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-black py-4 rounded-xl transition shadow-lg shadow-green-500/20">
-                    SEND MESSAGE
-                </button>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <footer class="py-10 text-center text-gray-600 text-sm border-t border-zinc-900">
-        &copy; 2026 M.G. Sai Swarup. Built for Scalability & Quality.
-    </footer>
+        <!-- Technical Skills Achievement -->
+        <section class="reveal">
+            <div class="glass-card section-content">
+                <h2 class="accent-color">🛡️ Advanced Cryptography & Real-Time Systems</h2>
+                <ul class="skills-list">
+                    <li>
+                        <strong>Protocol Design:</strong> 
+                        Developed a multi-user Symmetric Ratchet system based on the Signal Protocol (X3DH/Double Ratchet principles).
+                    </li>
+                    <li>
+                        <strong>Key Hardening:</strong> 
+                        Utilized PBKDF2 with 100,000 iterations for secure key derivation, effectively neutralizing brute-force dictionary attacks.
+                    </li>
+                    <li>
+                        <strong>Traffic Engineering:</strong> 
+                        Reduced server-side overhead by 90% through Temporal Message Aggregation, allowing complex cryptographic sync without lagging the UI.
+                    </li>
+                </ul>
+                <div class="achievement-actions">
+                    <a href="assets/cryptography-cert.pdf" target="_blank" class="btn-action btn-view">View Full Credential</a>
+                    <a href="assets/cryptography-cert.pdf" download class="btn-action btn-download">Download PDF</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

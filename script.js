@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function type() {
         const currentWord = words[wordIndex];
-        textElement.textContent = isDeleting ? currentWord.substring(0, charIndex - 1) : currentWord.substring(0, charIndex + 1);
+        
         charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+        textElement.textContent = currentWord.substring(0, charIndex);
+
         let typeSpeed = isDeleting ? 50 : 100;
 
         if (!isDeleting && charIndex === currentWord.length) { isDeleting = true; typeSpeed = 2000; }
