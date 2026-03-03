@@ -15,7 +15,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: #0f0f0f; color: white; overflow-x: hidden; font-family: 'Inter', sans-serif; cursor: none; }
         
-        /* UI Interaction Layers */
         #cursor-dot { width: 8px; height: 8px; background: #22c55e; position: fixed; border-radius: 50%; pointer-events: none; z-index: 9999; }
         #cursor-outline { width: 40px; height: 40px; border: 2px solid rgba(34, 197, 94, 0.5); position: fixed; border-radius: 50%; pointer-events: none; z-index: 9998; transition: all 0.1s ease-out; }
         #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: transparent; z-index: 1000; }
@@ -29,7 +28,6 @@
             position: relative; overflow: hidden;
         }
         .glass-card:hover { border-color: #22c55e; transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.2); }
-        
         .glass-card::before {
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(34, 197, 94, 0.1), transparent 40%);
@@ -48,16 +46,13 @@
             font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 4px; position: relative; z-index: 10;
         }
         .cert-btn:hover { background: #22c55e; color: black; }
-        
         .philosophy-border { border-left: 4px solid #22c55e; background: linear-gradient(90deg, rgba(34, 197, 94, 0.05) 0%, transparent 100%); }
         .skill-tag { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2); padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; color: #22c55e; }
-        
         .nav-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; transition: 0.3s; }
         .nav-link:hover { color: #22c55e; }
     </style>
 </head>
 <body>
-
     <div id="cursor-dot"></div>
     <div id="cursor-outline"></div>
     <div id="progress-container"><div id="progress-bar"></div></div>
@@ -88,7 +83,6 @@
                 <div class="flex space-x-5">
                     <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-github-fill"></i></a>
                     <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-linkedin-box-fill"></i></a>
-                    <a href="mailto:mattasaiswaroop5641@gmail.com" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-mail-send-fill"></i></a>
                 </div>
             </div>
         </div>
@@ -108,21 +102,18 @@
                 <p class="text-green-500 font-mono text-sm mb-6 underline decoration-green-900">Zero-Knowledge Collaborative Workspace</p>
                 <ul class="space-y-4 text-gray-400 text-sm mb-8">
                     <li>• <strong>ShadowRatchet Protocol:</strong> Custom E2EE sync for 100+ concurrent users.</li>
-                    <li>• <strong>Forward Secrecy:</strong> AES-256-GCM keys generated client-side; never stored on server.</li>
+                    <li>• <strong>Forward Secrecy:</strong> AES-256-GCM keys generated client-side.</li>
                     <li>• <strong>Optimization:</strong> 90% overhead reduction via Temporal Message Aggregation.</li>
-                    <li>• <strong>Architecture:</strong> Stateless relay nodes to prevent metadata leaking.</li>
                 </ul>
                 <div class="flex flex-wrap gap-2 mb-8">
-                    <span class="skill-tag">Socket.io</span><span class="skill-tag">Web Crypto API</span><span class="skill-tag">Node.js</span><span class="skill-tag">E2EE</span>
+                    <span class="skill-tag">Socket.io</span><span class="skill-tag">Web Crypto API</span><span class="skill-tag">Node.js</span>
                 </div>
-                <a href="https://shadowpad.onrender.com" target="_blank" class="text-green-500 font-bold flex items-center gap-2 hover:underline">Launch Live System <i class="ri-external-link-line"></i></a>
+                <a href="https://shadowpad.onrender.com" target="_blank" class="text-green-500 font-bold flex items-center gap-2 hover:underline">Launch System <i class="ri-external-link-line"></i></a>
             </div>
             
             <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
                 <p class="text-green-500">// Protocol: ShadowRatchet Active</p>
-                <p>> Initializing Handshake... Done.</p>
-                <p>> AES-256-GCM Key Exchange: Success</p>
-                <p>> Latency: 42ms | Relay: Debounced</p>
+                <p>> AES-256-GCM Handshake: OK</p>
                 <p class="text-white mt-4">> Secure Tunnel Established.</p>
             </div>
         </div>
@@ -131,21 +122,17 @@
             <div class="bg-zinc-900/80 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 lg:order-1 order-2">
                 <p class="text-blue-400"># PyTest Status: Active</p>
                 <p class="text-green-400">PASSED: test_student_crud_integrity</p>
-                <p class="text-green-400">PASSED: test_sql_injection_sanitization</p>
-                <p class="text-green-400">PASSED: test_auth_middleware_bypass</p>
                 <p class="text-yellow-400">COVERAGE: 94.2%</p>
             </div>
             
 
+[Image of Model-View-Controller (MVC) architecture]
 
             <div class="lg:order-2 order-1">
                 <h4 class="text-3xl font-black mb-2">Student Management System</h4>
                 <p class="text-blue-400 font-mono text-sm mb-6 underline decoration-blue-900">Flask-based Institutional Suite</p>
-                <p class="text-gray-400 text-sm mb-6 leading-relaxed">A robust full-stack application focused on data integrity. This project serves as a primary showcase for <strong>Automated Regression Testing</strong>, SQL sanitization, and relational database management using SQLAlchemy.</p>
-                <div class="flex flex-wrap gap-2 mb-8">
-                    <span class="skill-tag">Python (Flask)</span><span class="skill-tag">SQLAlchemy</span><span class="skill-tag">PyTest</span><span class="skill-tag">MVC</span>
-                </div>
-                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" class="text-xs font-bold border border-zinc-700 px-6 py-2 rounded-lg hover:bg-zinc-800 transition">View Source Code</a>
+                <p class="text-gray-400 text-sm mb-6">Relational database management using SQLAlchemy with deep focus on automated regression testing.</p>
+                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" class="text-xs font-bold border border-zinc-700 px-6 py-2 rounded-lg hover:bg-zinc-800 transition">View Source</a>
             </div>
         </div>
     </section>
@@ -156,10 +143,9 @@
             <div class="glass-card p-8 rounded-2xl">
                 <h4 class="text-green-500 font-bold mb-6 flex items-center gap-2"><i class="ri-shield-user-line"></i> Security</h4>
                 <ul class="text-sm text-zinc-400 space-y-3">
-                    <li>• End-to-End Encryption (E2EE)</li>
+                    <li>• End-to-End Encryption</li>
                     <li>• Zero-Knowledge Proofs</li>
-                    <li>• PBKDF2 & AES-GCM</li>
-                    <li>• SQL Injection Prevention</li>
+                    <li>• AES-256-GCM & PBKDF2</li>
                 </ul>
             </div>
             <div class="glass-card p-8 rounded-2xl">
@@ -167,17 +153,15 @@
                 <ul class="text-sm text-zinc-400 space-y-3">
                     <li>• Regression Testing (PyTest)</li>
                     <li>• Automation Pipelines</li>
-                    <li>• Integration Integrity</li>
-                    <li>• Black-box Testing</li>
+                    <li>• SQL Injection Sanitization</li>
                 </ul>
             </div>
-            <div class="glass-card p-8 rounded-2xl">
-                <h4 class="text-purple-500 font-bold mb-6 flex items-center gap-2"><i class="ri-terminal-window-line"></i> Core Dev</h4>
+            <div class="glass-card p-8 rounded-2xl border-green-500/30">
+                <h4 class="text-purple-500 font-bold mb-6 flex items-center gap-2"><i class="ri-robot-2-line"></i> AI & Automation</h4>
                 <ul class="text-sm text-zinc-400 space-y-3">
-                    <li>• Python (Flask/SQLAlchemy)</li>
-                    <li>• JavaScript (Node.js/Socket.io)</li>
-                    <li>• Database Optimization</li>
-                    <li>• API Architecture</li>
+                    <li>• <strong>n8n No-Code AI Building</strong></li>
+                    <li>• Multi-Agent AI Workflows</li>
+                    <li>• LLM & API Integrations</li>
                 </ul>
             </div>
         </div>
@@ -186,31 +170,14 @@
     <section id="about" class="py-24 px-6 md:px-20 reveal">
         <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">The Journey</h3>
         <div class="grid md:grid-cols-2 gap-10">
-            <div>
-                <p class="text-gray-300 text-lg leading-relaxed mb-6">
-                    My transition from a <strong>BiPC (Biology)</strong> background to a BCA at Vignan University has given me a meticulous, systemic approach to code. I treat software like a biological organism: it requires systemic balance, resilience against 'infections' (bugs), and constant evolution.
-                </p>
-                <p class="text-gray-400 text-sm italic border-l-2 border-zinc-700 pl-4">
-                    "Observation of biological patterns translates directly to identifying security vulnerabilities."
-                </p>
-            </div>
+            <p class="text-gray-300 text-lg leading-relaxed">
+                My transition from a <strong>BiPC (Biology)</strong> background to a BCA at Vignan University has given me a meticulous, systemic approach to code. I treat software like a biological organism: it requires systemic balance and resilience.
+            </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                    <span class="text-green-500 text-xs font-bold block mb-1">UNIVERSITY</span>
-                    <span class="text-sm text-gray-300">BCA @ Vignan University</span>
-                </div>
-                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                    <span class="text-green-500 text-xs font-bold block mb-1">INTERMEDIATE</span>
-                    <span class="text-sm text-gray-300">NRI Junior College (BiPC)</span>
-                </div>
-                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                    <span class="text-green-500 text-xs font-bold block mb-1">SCHOOLING (SSC)</span>
-                    <span class="text-sm text-gray-300">Dr. KKRS Gowtham</span>
-                </div>
-                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                    <span class="text-green-500 text-xs font-bold block mb-1">LOCATION</span>
-                    <span class="text-sm text-gray-300">Andhra Pradesh, India</span>
-                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-green-500 text-xs font-bold block mb-1">UNIVERSITY</span><span class="text-sm text-gray-300">BCA @ Vignan University</span></div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-green-500 text-xs font-bold block mb-1">INTERMEDIATE</span><span class="text-sm text-gray-300">NRI Junior College (BiPC)</span></div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-green-500 text-xs font-bold block mb-1">SCHOOLING</span><span class="text-sm text-gray-300">Dr. KKRS Gowtham</span></div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5"><span class="text-green-500 text-xs font-bold block mb-1">LOCATION</span><span class="text-sm text-gray-300">Andhra Pradesh, India</span></div>
             </div>
         </div>
     </section>
@@ -220,15 +187,25 @@
         <div class="max-w-4xl glass-card p-10 rounded-3xl philosophy-border">
             <h4 class="text-2xl font-black mb-6 italic">"The Two Sons Rule"</h4>
             <p class="text-gray-300 text-lg leading-relaxed italic">
-                "I believe in <strong>Proportional Security</strong>. For ShadowPad, I gave the <strong>'Elder Son'</strong> (the permanent Vault) a heavy PBKDF2 'Big Stick' for long-term armor. For the <strong>'Younger Son'</strong> (the Live Room), I used lightweight ephemeral keys for speed. This balance is my engineering baseline."
+                "I believe in <strong>Proportional Security</strong>. Armor for the permanent (Elder Son), speed for the ephemeral (Younger Son). This balance is my engineering baseline."
             </p>
         </div>
     </section>
 
     <section id="achievements" class="py-24 px-6 md:px-20 reveal">
-        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Verified Certifications</h3>
+        <h3 class="text-3xl font-bold mb-12 border-l-4 border-green-500 pl-4">Verified Certifications (6)</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
+            <div class="glass-card p-6 rounded-2xl flex flex-col h-full border-green-500/40">
+                <i class="ri-robot-2-line text-3xl text-green-400 mb-4"></i>
+                <h4 class="font-bold text-sm">n8n: No Code AI Agent Builder</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">Simplilearn Skillup | Code: 9913759</p>
+                <div class="mt-auto flex gap-2">
+                    <a href="9913759_9666900_1772523883494.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="9913759_9666900_1772523883494.pdf" download class="cert-btn">Download</a>
+                </div>
+            </div>
+
             <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
                 <i class="ri-python-fill text-3xl text-blue-400 mb-4"></i>
                 <h4 class="font-bold text-sm">Python Essentials 2</h4>
@@ -262,7 +239,7 @@
             <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
                 <i class="ri-robot-line text-3xl text-purple-400 mb-4"></i>
                 <h4 class="font-bold text-sm">Automated Testing</h4>
-                <p class="text-zinc-500 text-[10px] mt-1 mb-6">QA Advanced</p>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">QA Advanced Certification</p>
                 <div class="mt-auto flex gap-2">
                     <a href="automated.pdf" target="_blank" class="cert-btn">View</a>
                     <a href="automated.pdf" download class="cert-btn">Download</a>
@@ -271,8 +248,8 @@
 
             <div class="glass-card p-6 rounded-2xl flex flex-col h-full">
                 <i class="ri-award-line text-3xl text-yellow-400 mb-4"></i>
-                <h4 class="font-bold text-sm">Security Workshop</h4>
-                <p class="text-zinc-500 text-[10px] mt-1 mb-6">Vignan University</p>
+                <h4 class="font-bold text-sm">Security Workshop Merit</h4>
+                <p class="text-zinc-500 text-[10px] mt-1 mb-6">Vignan University Workshop</p>
                 <div class="mt-auto flex gap-2">
                     <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" target="_blank" class="cert-btn">View</a>
                     <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" download class="cert-btn">Download</a>
@@ -287,45 +264,34 @@
             <h3 class="text-3xl font-bold mb-8 text-center text-green-500">Initialize Connection</h3>
             <form action="https://formspree.io/f/mbdjbkbv" method="POST" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" name="name" placeholder="Name" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition text-white">
-                    <input type="email" name="email" placeholder="Email" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition text-white">
+                    <input type="text" name="name" placeholder="Name" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 text-white">
+                    <input type="email" name="email" placeholder="Email" required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 text-white">
                 </div>
-                <textarea name="message" rows="5" placeholder="Your transmission..." required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 transition text-white"></textarea>
+                <textarea name="message" rows="5" placeholder="Your transmission..." required class="w-full bg-zinc-800/50 border border-zinc-700 p-4 rounded-xl outline-none focus:border-green-500 text-white"></textarea>
                 <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-black py-4 rounded-xl transition shadow-lg shadow-green-500/20">SEND MESSAGE</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-zinc-600 text-[10px] tracking-widest uppercase">
-        &copy; 2026 M.G. Sai Swarup | Zero-Knowledge | Zero-Defects.
-    </footer>
+    <footer class="py-10 text-center text-zinc-600 text-[10px] tracking-widest uppercase">&copy; 2026 M.G. Sai Swarup.</footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const dot = document.getElementById("cursor-dot");
-            const outline = document.getElementById("cursor-outline");
-            const progressBar = document.getElementById("progress-bar");
-
+            const dot = document.getElementById("cursor-dot"), outline = document.getElementById("cursor-outline"), progressBar = document.getElementById("progress-bar");
             window.addEventListener("mousemove", (e) => {
                 dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
                 outline.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
-
                 document.querySelectorAll('.glass-card').forEach(card => {
                     const rect = card.getBoundingClientRect();
                     card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
                     card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
                 });
             });
-
             window.addEventListener("scroll", () => {
-                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-                progressBar.style.width = scrolled + "%";
+                progressBar.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + "%";
             });
-
-            const textElement = document.getElementById("typing-text");
-            const words = ["Zero-Knowledge Systems.", "ShadowRatchet Protocols.", "QA Automation Pipelines.", "Forward Secrecy."];
+            const textElement = document.getElementById("typing-text"), words = ["Zero-Knowledge Systems.", "n8n AI Workflows.", "ShadowRatchet Protocols.", "QA Automation Pipelines."];
             let wordI = 0, charI = 0, isDeleting = false;
-
             function type() {
                 const current = words[wordI];
                 textElement.textContent = isDeleting ? current.substring(0, charI--) : current.substring(0, charI++);
@@ -333,11 +299,7 @@
                 else if (isDeleting && charI < 0) { isDeleting = false; wordI = (wordI + 1) % words.length; charI = 0; setTimeout(type, 500); }
                 else setTimeout(type, isDeleting ? 50 : 150);
             }
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-            }, { threshold: 0.1 });
-
+            const observer = new IntersectionObserver((entries) => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('active')), { threshold: 0.1 });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
             type();
         });
