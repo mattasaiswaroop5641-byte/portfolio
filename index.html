@@ -22,6 +22,7 @@
 
         .glass-card {
             background: rgba(24, 24, 27, 0.6);
+            -webkit-backdrop-filter: blur(12px);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -77,12 +78,12 @@
                 Architecting <span id="typing-text" class="text-green-500 typing-cursor"></span>
             </h2>
             <div class="flex flex-wrap gap-6 justify-center md:justify-start items-center">
-                <a href="https://shadowpad.onrender.com" target="_blank" class="bg-green-500 hover:bg-green-600 text-black px-8 py-3 rounded-xl font-bold transition flex items-center gap-2 shadow-lg shadow-green-500/20">
+                <a href="https://shadowpad.onrender.com" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-black px-8 py-3 rounded-xl font-bold transition flex items-center gap-2 shadow-lg shadow-green-500/20">
                     <i class="ri-shield-keyhole-line text-xl"></i> Launch ShadowPad
                 </a>
                 <div class="flex space-x-5">
-                    <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-github-fill"></i></a>
-                    <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-linkedin-box-fill"></i></a>
+                    <a href="https://github.com/mattasaiswaroop5641-byte" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/sai-swaroop-9a0b0b385/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="text-3xl text-zinc-400 hover:text-green-500 transition"><i class="ri-linkedin-box-fill"></i></a>
                 </div>
             </div>
         </div>
@@ -98,6 +99,51 @@
         
         <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mb-10">
             <div>
+                <h4 class="text-3xl font-black mb-2">GSS (Genuine Smart System)</h4>
+                <p class="text-orange-500 font-mono text-sm mb-6 underline decoration-orange-900">Mobile AI Automachine Assistant</p>
+                <ul class="space-y-4 text-gray-400 text-sm mb-8">
+                    <li>• <strong>Jarvis-like Architecture:</strong> An intelligent voice and intent recognition system for mobile environments.</li>
+                    <li>• <strong>Task Automation:</strong> Employs background "automachines" to execute complex routine mobile tasks.</li>
+                    <li>• <strong>System Integration:</strong> Seamlessly hooks into device-level APIs to operate as a true, autonomous digital assistant.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="skill-tag">Mobile/Java</span><span class="skill-tag">AI/NLP</span><span class="skill-tag">System Automation</span>
+                </div>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-orange-500 font-bold flex items-center gap-2 hover:underline">View Source <i class="ri-external-link-line"></i></a>
+            </div>
+            
+            <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
+                <p class="text-orange-500">// Module: GSS_Core_Automachine</p>
+                <p>> Awaiting Voice Intent...</p>
+                <p class="text-white mt-4">> Intent Parsed: "Optimize System Routines"</p>
+                <p class="text-green-400 mt-2">> Executing Background Tasks... OK.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mb-10">
+            <div>
+                <h4 class="text-3xl font-black mb-2">ShadowMarket</h4>
+                <p class="text-purple-500 font-mono text-sm mb-6 underline decoration-purple-900">AI-Enhanced E-Commerce Ecosystem</p>
+                <ul class="space-y-4 text-gray-400 text-sm mb-8">
+                    <li>• <strong>Hybrid Recommendations:</strong> Machine Learning engine using TF-IDF & Collaborative Filtering.</li>
+                    <li>• <strong>Autonomous Logistics:</strong> Background "Automachines" auto-assign delivery agents based on ratings.</li>
+                    <li>• <strong>Enterprise Security:</strong> RBAC, PyOTP 2FA Admin panel, Stripe integration & async emails.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="skill-tag">Python/Flask</span><span class="skill-tag">Scikit-Learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">Stripe API</span>
+                </div>
+                <a href="https://github.com/mattasaiswaroop5641-byte/ShadowMarket" target="_blank" rel="noopener noreferrer" class="text-purple-500 font-bold flex items-center gap-2 hover:underline">View Source <i class="ri-external-link-line"></i></a>
+            </div>
+            
+            <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
+                <p class="text-purple-500">// Task: AutoAssign_Delivery</p>
+                <p>> Eval Agent Workloads & Ratings: DONE</p>
+                <p class="text-white mt-4">> Order assigned to Agent #42.</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mb-10">
+            <div>
                 <h4 class="text-3xl font-black mb-2">ShadowPad</h4>
                 <p class="text-green-500 font-mono text-sm mb-6 underline decoration-green-900">Zero-Knowledge Collaborative Workspace</p>
                 <ul class="space-y-4 text-gray-400 text-sm mb-8">
@@ -108,7 +154,7 @@
                 <div class="flex flex-wrap gap-2 mb-8">
                     <span class="skill-tag">Socket.io</span><span class="skill-tag">Web Crypto API</span><span class="skill-tag">Node.js</span>
                 </div>
-                <a href="https://shadowpad.onrender.com" target="_blank" class="text-green-500 font-bold flex items-center gap-2 hover:underline">Launch System <i class="ri-external-link-line"></i></a>
+                <a href="https://shadowpad.onrender.com" target="_blank" rel="noopener noreferrer" class="text-green-500 font-bold flex items-center gap-2 hover:underline">Launch System <i class="ri-external-link-line"></i></a>
             </div>
             
             <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
@@ -132,7 +178,7 @@
                 <h4 class="text-3xl font-black mb-2">Student Management System</h4>
                 <p class="text-blue-400 font-mono text-sm mb-6 underline decoration-blue-900">Flask-based Institutional Suite</p>
                 <p class="text-gray-400 text-sm mb-6">Relational database management using SQLAlchemy with deep focus on automated regression testing.</p>
-                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" class="text-xs font-bold border border-zinc-700 px-6 py-2 rounded-lg hover:bg-zinc-800 transition">View Source</a>
+                <a href="https://github.com/mattasaiswaroop5641-byte/flask-student-management-system" target="_blank" rel="noopener noreferrer" class="text-xs font-bold border border-zinc-700 px-6 py-2 rounded-lg hover:bg-zinc-800 transition">View Source</a>
             </div>
         </div>
     </section>
@@ -201,7 +247,7 @@
                 <h4 class="font-bold text-sm">n8n: No Code AI Agent Builder</h4>
                 <p class="text-zinc-500 text-[10px] mt-1 mb-6">Simplilearn Skillup | Code: 9913759</p>
                 <div class="mt-auto flex gap-2">
-                    <a href="9913759_9666900_1772523883494.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="9913759_9666900_1772523883494.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn">View</a>
                     <a href="9913759_9666900_1772523883494.pdf" download class="cert-btn">Download</a>
                 </div>
             </div>
@@ -211,7 +257,7 @@
                 <h4 class="font-bold text-sm">Python Essentials 2</h4>
                 <p class="text-zinc-500 text-[10px] mt-1 mb-6">Cisco Networking Academy</p>
                 <div class="mt-auto flex gap-2">
-                    <a href="Python_Essentials_2_certificate_mattasaiswaroop5641-gmail-com_ab8d4c46-b32d-490e-9bff-bcba982109ac.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="Python_Essentials_2_certificate_mattasaiswaroop5641-gmail-com_ab8d4c46-b32d-490e-9bff-bcba982109ac.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn">View</a>
                     <a href="Python_Essentials_2_certificate_mattasaiswaroop5641-gmail-com_ab8d4c46-b32d-490e-9bff-bcba982109ac.pdf" download class="cert-btn">Download</a>
                 </div>
             </div>
@@ -221,7 +267,7 @@
                 <h4 class="font-bold text-sm">Software Testing Internship</h4>
                 <p class="text-zinc-500 text-[10px] mt-1 mb-6">Experience Verification</p>
                 <div class="mt-auto flex gap-2">
-                    <a href="Sai_Swaroop_Software_Testing_Internship_Certificate.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="Sai_Swaroop_Software_Testing_Internship_Certificate.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn">View</a>
                     <a href="Sai_Swaroop_Software_Testing_Internship_Certificate.pdf" download class="cert-btn">Download</a>
                 </div>
             </div>
@@ -231,7 +277,7 @@
                 <h4 class="font-bold text-sm">AWS / Institutional (231FJ01042)</h4>
                 <p class="text-zinc-500 text-[10px] mt-1 mb-6">ID: 231FJ01042</p>
                 <div class="mt-auto flex gap-2">
-                    <a href="231FJ01042.png" target="_blank" class="cert-btn">View</a>
+                    <a href="231FJ01042.png" target="_blank" rel="noopener noreferrer" class="cert-btn">View</a>
                     <a href="231FJ01042.png" download class="cert-btn">Download</a>
                 </div>
             </div>
@@ -241,7 +287,7 @@
                 <h4 class="font-bold text-sm">Automated Testing</h4>
                 <p class="text-zinc-500 text-[10px] mt-1 mb-6">QA Advanced Certification</p>
                 <div class="mt-auto flex gap-2">
-                    <a href="automated.pdf" target="_blank" class="cert-btn">View</a>
+                    <a href="automated.pdf" target="_blank" rel="noopener noreferrer" class="cert-btn">View</a>
                     <a href="automated.pdf" download class="cert-btn">Download</a>
                 </div>
             </div>
@@ -251,7 +297,7 @@
                 <h4 class="font-bold text-sm">Security Workshop Merit</h4>
                 <p class="text-zinc-500 text-[10px] mt-1 mb-6">Vignan University Workshop</p>
                 <div class="mt-auto flex gap-2">
-                    <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" target="_blank" class="cert-btn">View</a>
+                    <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" target="_blank" rel="noopener noreferrer" class="cert-btn">View</a>
                     <a href="WhatsApp Image 2026-02-16 at 20.26.38 (1).jpeg" download class="cert-btn">Download</a>
                 </div>
             </div>
@@ -290,7 +336,7 @@
             window.addEventListener("scroll", () => {
                 progressBar.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + "%";
             });
-            const textElement = document.getElementById("typing-text"), words = ["Zero-Knowledge Systems.", "n8n AI Workflows.", "ShadowRatchet Protocols.", "QA Automation Pipelines."];
+            const textElement = document.getElementById("typing-text"), words = ["Zero-Knowledge Systems.", "AI Recommendation Engines.", "GSS Mobile Automachines.", "QA Automation Pipelines."];
             let wordI = 0, charI = 0, isDeleting = false;
             function type() {
                 const current = words[wordI];

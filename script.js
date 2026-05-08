@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Typing Logic (Restored)
     const textElement = document.getElementById("typing-text");
-    const words = ["Zero-Knowledge Systems.", "Secure Ratchet Protocols.", "QA Automation Pipelines.", "Forward Secrecy."];
+    const words = ["Zero-Knowledge Systems.", "AI Recommendation Engines.", "GSS Mobile Automachines.", "QA Automation Pipelines."];
     let wordIndex = 0, charIndex = 0, isDeleting = false;
 
     function type() {
