@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "Zero-Knowledge Systems.",
         "AI Career Guidance Engines.",
         "Smart Campus Facilities Platforms.",
+        "GSS Sovereign AI Agent.",
         "AI Recommendation Engines.",
-        "GSS Mobile Automachines.",
         "QA Automation Pipelines."
     ];
     let wordIndex = 0, charIndex = 0, isDeleting = false;
