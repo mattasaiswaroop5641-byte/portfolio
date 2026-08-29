@@ -184,6 +184,66 @@
             </div>
         </div>
 
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mb-10">
+            <div>
+                <h4 class="text-3xl font-black mb-2 flex items-center flex-wrap gap-3">
+                    CAMPUSFIX
+                    <span class="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold"><i class="ri-building-4-line mr-1"></i> Facilities Governance</span>
+                </h4>
+                <p class="text-amber-400 font-mono text-sm mb-6 underline decoration-amber-900">Smart Campus Infrastructure & Incident Triage Platform</p>
+                <ul class="space-y-4 text-gray-400 text-sm mb-8">
+                    <li>• <strong>Multi-Role Portal Segregation:</strong> Dedicated portals for Students (Roll No validation & photo proof), Faculty (Lecture/Lab priority routing), and Admins.</li>
+                    <li>• <strong>5-Flow Real-Time Email Architecture:</strong> Automated Gmail SMTP engine dispatching instant alerts for logins, photo-embedded ticket triages, dispatches, and resolutions.</li>
+                    <li>• <strong>Enterprise TOTP Security:</strong> RFC 6238 TOTP Google Authenticator 2FA, session isolation, dynamic access revocation, and multi-dimensional triage dashboard.</li>
+                    <li>• <strong>Automated Cloud Retention:</strong> 72-hour automated background sweeps for resolved incidents and 1-click semester database renewal.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="skill-tag">React 18</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Node.js/Express</span><span class="skill-tag">MongoDB Atlas</span><span class="skill-tag">Gmail SMTP Gateway</span><span class="skill-tag">TOTP 2FA</span><span class="skill-tag">Tailwind CSS</span>
+                </div>
+                <div class="flex flex-wrap gap-6">
+                    <a href="https://github.com/mattasaiswaroop5641-byte/campusfix" target="_blank" rel="noopener noreferrer" class="text-amber-400 font-bold flex items-center gap-2 hover:underline">View Repository <i class="ri-github-fill"></i></a>
+                </div>
+            </div>
+            
+            <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
+                <p class="text-amber-400">// Module: CampusFix_Triage_Daemon</p>
+                <p>> Incoming Incident: Lab 304 AC Malfunction [Photo Attached]</p>
+                <p class="text-white mt-4">> Admin TOTP Verified: Session Active (2FA OK)</p>
+                <p class="text-green-400 mt-2">> Automated SMTP Dispatch: Technician Assigned</p>
+                <p class="text-cyan-400 mt-2">> DB Retention: 72h Cleanup Sweep Active</p>
+            </div>
+        </div>
+
+        <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center mb-10">
+            <div>
+                <h4 class="text-3xl font-black mb-2 flex items-center flex-wrap gap-3">
+                    AI Career Guidance Assistant
+                    <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full uppercase tracking-widest font-bold"><i class="ri-compass-3-line mr-1"></i> AI Intelligence</span>
+                </h4>
+                <p class="text-emerald-400 font-mono text-sm mb-6 underline decoration-emerald-900">Conversational Career Architect & Dynamic Roadmap Engine</p>
+                <ul class="space-y-4 text-gray-400 text-sm mb-8">
+                    <li>• <strong>LLM-Powered Career Intelligence:</strong> Integrates Groq LLM (Llama 3.3) with qualification-based rule matching for highly structured, personalized career roadmaps.</li>
+                    <li>• <strong>Dynamic 4-Tier Milestones:</strong> Automated generation of actionable prerequisite graphs, skill gap assessments, certifications, and industry salary benchmarks.</li>
+                    <li>• <strong>Context Memory & Streaming:</strong> Multi-turn conversation buffer with resilient state handling, fast streaming responses, and instant recommendation engines.</li>
+                    <li>• <strong>High-Performance Full-Stack:</strong> FastAPI Python async backend coupled with React 19 + TypeScript modern responsive frontend.</li>
+                </ul>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="skill-tag">React 19</span><span class="skill-tag">TypeScript</span><span class="skill-tag">Python FastAPI</span><span class="skill-tag">Groq LLM / Llama 3.3</span><span class="skill-tag">Context Memory</span><span class="skill-tag">Tailwind CSS</span>
+                </div>
+                <div class="flex flex-wrap gap-6">
+                    <a href="https://github.com/mattasaiswaroop5641-byte/career-ai-chatbot" target="_blank" rel="noopener noreferrer" class="text-emerald-400 font-bold flex items-center gap-2 hover:underline">View Repository <i class="ri-github-fill"></i></a>
+                </div>
+            </div>
+            
+            <div class="bg-black/40 rounded-2xl p-6 font-mono text-[10px] text-zinc-500 border border-white/5 shadow-inner">
+                <p class="text-emerald-400">// Module: Career_AI_Engine</p>
+                <p>> Profile: BCA / Cybersecurity Specialization</p>
+                <p class="text-white mt-4">> Context Buffer: Multi-turn State Active</p>
+                <p class="text-green-400 mt-2">> Groq LLM Stream: Level 1-4 Milestones Synthesized</p>
+                <p class="text-cyan-400 mt-2">> Status: 12-Month Security Roadmap Rendered OK</p>
+            </div>
+        </div>
+
         <div class="glass-card p-8 md:p-12 rounded-3xl grid lg:grid-cols-2 gap-12 items-center">
             <div>
                 <h4 class="text-3xl font-black mb-2 flex items-center flex-wrap gap-3">
@@ -364,7 +424,14 @@
             window.addEventListener("scroll", () => {
                 progressBar.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100 + "%";
             });
-            const textElement = document.getElementById("typing-text"), words = ["Zero-Knowledge Systems.", "AI Recommendation Engines.", "GSS Mobile Automachines.", "QA Automation Pipelines."];
+            const textElement = document.getElementById("typing-text"), words = [
+                "Zero-Knowledge Systems.",
+                "AI Career Guidance Engines.",
+                "Smart Campus Facilities Platforms.",
+                "AI Recommendation Engines.",
+                "GSS Mobile Automachines.",
+                "QA Automation Pipelines."
+            ];
             let wordI = 0, charI = 0, isDeleting = false;
             function type() {
                 const current = words[wordI];
